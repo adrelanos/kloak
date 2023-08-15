@@ -90,9 +90,10 @@ long random_between(long lower, long upper) {
 }
 
 void set_rescue_keys(const char* rescue_keys_str) {
-        char* _rescue_keys_str = malloc(strlen(rescue_keys_str) + 1);
-        strncpy(_rescue_keys_str, rescue_keys_str, strlen(rescue_keys_str));
-        _rescue_keys_str[strlen(rescue_keys_str)] = '\0';
+        char* _rescue_keys_str = strdup(rescue_keys_str);
+        if (!_rescue_keys_str) {
+            panic("Failed to allocate memory for _rescue_keys_str");
+        }
 
         char* token = strtok(_rescue_keys_str, rescue_key_seps);
 
@@ -159,11 +160,17 @@ void detect_devices() {
                 }
 
                 if (is_keyboard(fd)) {
-                        strncpy(named_inputs[device_count++], device, BUFSIZE-1);
+                        strncpy(named_inputs[device_count], device, BUFSIZE-1);
+                        named_inputs[device_count][BUFSIZE-1] = '\0';
+                        device_count++;
+
                         if (verbose)
                                 printf("Found keyboard at: %s\n", device);
                 } else if (is_mouse(fd)) {
-                        strncpy(named_inputs[device_count++], device, BUFSIZE-1);
+                        strncpy(named_inputs[device_count], device, BUFSIZE-1);
+                        named_inputs[device_count][BUFSIZE-1] = '\0';
+                        device_count++;
+
                         if (verbose)
                                 printf("Found mouse at: %s\n", device);
                 }
@@ -387,7 +394,9 @@ int main(int argc, char **argv) {
                 case 'r':
                         if (device_count >= MAX_INPUTS)
                                 panic("Too many -r options: can read from at most %d devices\n", MAX_INPUTS);
-                        strncpy(named_inputs[device_count++], optarg, BUFSIZE-1);
+                        strncpy(named_inputs[device_count], optarg, BUFSIZE-1);
+                        named_inputs[device_count][BUFSIZE-1] = '\0';
+                        device_count++;
                         break;
 
                 case 'd':
@@ -402,6 +411,7 @@ int main(int argc, char **argv) {
 
                 case 'k':
                         strncpy(rescue_keys_str, optarg, BUFSIZE-1);
+                        rescue_keys_str[BUFSIZE-1] = '\0';
                         break;
 
                 case 'v':
