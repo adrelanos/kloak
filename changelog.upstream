@@ -1,3 +1,22 @@
+commit d622dbe7cb6e192d8c237c30cb929bb1152cd613
+Merge: e152219 a879b23
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Jul 21 06:29:46 2026 -0400
+
+    Merge remote-tracking branch 'refs/remotes/org-ai-assisted/master'
+
+commit a879b238d4a1c875e52bc39d6cfcaa7dd18cbd4d
+Author: assisted-by-ai (Bot Account) (Machine Account) <228987186+assisted-by-ai@users.noreply.github.com>
+Date:   Sat Jul 18 20:00:22 2026 -0400
+
+    Coverity: point CI at the org-ai-assisted-kloak project
+
+commit e152219b0412c18f844524298e873507d63e4613
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Wed May 27 23:02:57 2026 +0000
+
+    bumped changelog version
+
 commit cd3b329001774784df3d1d0abd3ebefeef3d3496
 Merge: 4a30fce 887064a
 Author: Patrick Schleizer <adrelanos@whonix.org>
