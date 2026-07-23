@@ -16,7 +16,7 @@ coverity:
   apt-packages:    "libevdev-dev libinput-dev libwayland-dev libxkbcommon-dev pkg-config"
   build-command:   "./cov-analysis/bin/cov-build --dir cov-int make"
   ## scan.coverity.com project name. Verified at
-  ## https://scan.coverity.com/projects/Whonix-kloak
+  ## https://scan.coverity.com/projects/org-ai-assisted-kloak
   project-name:    "org-ai-assisted-kloak"
   canonical-repos: "org-ai-assisted/kloak"
 
