@@ -1,3 +1,55 @@
+commit 4c1e0ad954cf811ae3ab8b87afe5cd81e4f8f341
+Merge: 1079366 588d9cd
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Jul 28 08:21:07 2026 -0400
+
+    Merge remote-tracking branch 'refs/remotes/org-ai-assisted/master'
+
+commit 588d9cda90c883b083fb1eb1e60bd6268d8bdcc3
+Author: claude <noreply@anthropic.com>
+Date:   Tue Jul 28 06:17:22 2026 -0400
+
+    consumer-codex-review: drop OPENAI_API_KEY forward to the disabled reusable
+
+    Propagates org-ai-assisted/developer-meta-files#167. The reusable is a no-op
+    stub (job 'if: false') and no longer declares an OPENAI_API_KEY secret;
+    forwarding an undeclared secret is rejected by GitHub at workflow startup
+    (startup_failure). Dropping the forward lets the no-op run green; Codex review
+    stays cleanly disabled.
+
+    Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
+
+commit 1079366d63a8122fd71e134ea72d318c7c7bff36
+Merge: a248512 5be1955
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Thu Jul 23 08:20:15 2026 -0400
+
+    Merge remote-tracking branch 'refs/remotes/org-ai-assisted/master'
+
+commit 5be1955c86b0acd5f6944d12c6437e06baf045b6
+Author: assisted-by-ai (Bot Account) (Machine Account) <228987186+assisted-by-ai@users.noreply.github.com>
+Date:   Wed Jul 22 10:21:21 2026 -0400
+
+    consumer-claude-code: forward CLAUDE_CODE_OAUTH_TOKEN (claude review OAuth port)
+
+commit e54b8f8b26ac152ccca5c6e75a0308a1937b25d0
+Author: assisted-by-ai (Bot Account) (Machine Account) <228987186+assisted-by-ai@users.noreply.github.com>
+Date:   Tue Jul 21 09:05:45 2026 -0400
+
+    Coverity: fix the stale project URL comment (org-ai-assisted-kloak) (#36)
+
+    kloak's project-name was already org-ai-assisted-kloak; point the comment URL at that project instead of the old Whonix-kloak page.
+
+    AI-Assisted
+
+    Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
+
+commit a248512bd9863e135b1e236cedec14a79776caa6
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Jul 21 11:13:56 2026 +0000
+
+    bumped changelog version
+
 commit d622dbe7cb6e192d8c237c30cb929bb1152cd613
 Merge: e152219 a879b23
 Author: Patrick Schleizer <adrelanos@whonix.org>
