@@ -1,3 +1,40 @@
+commit 1b105a88c0f62549991239ee38fd6f1d02be87ba
+Merge: 333b32f 8c40b1d
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Aug 1 04:34:40 2026 -0400
+
+    Merge remote-tracking branch 'refs/remotes/org-ai-assisted/master'
+
+commit 333b32f732d91bb575e2a4c4c0b4012a6ebf48d8
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Aug 1 08:14:26 2026 +0000
+
+    bumped changelog version
+
+commit 8c40b1d5969d2ef143f6dda2a61a0e8f7d9e3db8
+Merge: 5c4d3c2 6aaa531
+Author: assisted-by-ai (Bot Account) (Machine Account) <228987186+assisted-by-ai@users.noreply.github.com>
+Date:   Fri Jul 31 15:46:08 2026 -0400
+
+    Merge pull request #38 from org-ai-assisted/ai/codeql-python
+
+    ci: add file-based CodeQL python lane
+
+commit 6aaa531a3ec9dc3be440766b18a5fd9789cdd2ae
+Author: claude (dev142 b93fb2c6-e15f-4d45-8566-f3ded893b70e) <noreply@anthropic.com>
+Date:   Fri Jul 31 15:06:13 2026 -0400
+
+    ci: add file-based CodeQL python lane
+
+    Propagate consumer-codeql-python.yml byte-identically from
+    developer-meta-files/consumer-templates. kloak ships real product Python (usr/libexec/kloak/find_wl_compositor); its C is already CodeQL-covered but this Python had no python CodeQL
+    analysis.
+
+    build-mode none; push/PR/workflow_dispatch triggers. No dm-consumer.yml
+    section required (reusable soft-skips an absent section).
+
+    Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
+
 commit a8ad867089b7feff22e2cc3e47f772463631a78e
 Merge: 0074a1e 5c4d3c2
 Author: Patrick Schleizer <adrelanos@whonix.org>
