@@ -1,3 +1,88 @@
+commit a8ad867089b7feff22e2cc3e47f772463631a78e
+Merge: 0074a1e 5c4d3c2
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Fri Jul 31 13:18:50 2026 -0400
+
+    Merge remote-tracking branch 'refs/remotes/org-ai-assisted/master'
+
+commit 5c4d3c2c727cb28a6ac479ad72322da9471e25da
+Merge: 0074a1e 0b22916
+Author: assisted-by-ai (Bot Account) (Machine Account) <228987186+assisted-by-ai@users.noreply.github.com>
+Date:   Fri Jul 31 10:05:50 2026 -0400
+
+    Merge pull request #37 from org-ai-assisted/ai
+
+    consumer-claude-code: mention-only triggers; gate the cfuzz batch jobs on CI_ENABLED_ORG_AI_ASSISTED
+
+commit 0b229166a34f3c8cfc46ffa771171e3b2d8b0fa9
+Merge: 518340f 28dd0a4
+Author: claude (dev138 9b889944-0a22-45e7-8fd6-c189113e33b9) <noreply@anthropic.com>
+Date:   Fri Jul 31 09:35:22 2026 -0400
+
+    Merge remote-tracking branch 'org-ai-assisted/ai' into ai
+
+commit 518340fa71f604462f589849a491bc0caafd329d
+Author: claude (dev138 9b889944-0a22-45e7-8fd6-c189113e33b9) <noreply@anthropic.com>
+Date:   Fri Jul 31 09:33:06 2026 -0400
+
+    ci: gate the local workflows on CI_ENABLED_ORG_AI_ASSISTED
+
+    Our workflows ran wherever the branch landed. Merged upstream they burn
+    Kicksecure/Whonix runner quota and post our CI into repos that never
+    asked for it; on a contributor fork they run the whole suite unbidden.
+    Only 5 of 136 workflow files across the fleet carried any owner gate.
+
+    Gate: a job-level `vars.CI_ENABLED_ORG_AI_ASSISTED == 'true'`, set once
+    as an organization variable on org-ai-assisted. Zero runner cost -- a job
+    whose `if:` is false never allocates one -- and the run still reports
+    green, so upstream and forks are not handed a red X for a lane they did
+    not opt into. A fork that WANTS the lane sets the same variable in its
+    own repo; no patch to these files, no fork of our workflows.
+
+    ANDed in front of any existing fork-PR guard rather than replacing it.
+
+    Verified: the workflow-yaml validator reports 0 findings for this repo.
+
+    Generated with assistance from Claude Code.
+
+commit 28dd0a4c240de9a4a9db6fc1551824957b81107a
+Author: assisted-by-ai (Bot Account) (Machine Account) <228987186+assisted-by-ai@users.noreply.github.com>
+Date:   Thu Jul 30 11:59:13 2026 -0400
+
+    consumer-claude-code: propagate the corrected template
+
+    Byte-identical to developer-meta-files consumer-templates.
+
+    The github.ref comment was wrong for one of the two events it described:
+    issue_comment fires with the default branch ref, pull_request_review_comment
+    with the PR merge ref (refs/pull/<number>/merge). No behaviour change -- the
+    concurrency group reaches github.ref only if neither number field is set, and
+    one always is for the events this workflow accepts.
+
+    Generated with assistance from Claude Code.
+
+commit 7add8fb1a5964fcc71355fbff384664fdf81e32a
+Author: claude (dev118 bd22decd-3027-4ab5-9e48-11adfe39b279) <noreply@anthropic.com>
+Date:   Tue Jul 28 13:50:13 2026 -0400
+
+    consumer-claude-code: mention-only triggers (propagated from template)
+
+    Byte-identical cp from developer-meta-files/consumer-templates.
+
+    pull_request and workflow_dispatch resolve to claude-code-action's
+    agent mode, whose trigger is a non-empty 'prompt' input that this
+    workflow does not pass, so those events could only spin up a runner
+    and exit without calling the model - a green "Claude Code Review"
+    check that reviewed nothing.
+
+    Co-Authored-By: Claude <noreply@anthropic.com>
+
+commit 0074a1e2aba8bd681812eb6601d50149547af281
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Jul 28 13:23:29 2026 +0000
+
+    bumped changelog version
+
 commit 4c1e0ad954cf811ae3ab8b87afe5cd81e4f8f341
 Merge: 1079366 588d9cd
 Author: Patrick Schleizer <adrelanos@whonix.org>
