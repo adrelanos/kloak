@@ -1,3 +1,25 @@
+commit 950ab2edf7df69b0a01cf397abdb6d8a12ef4647
+Merge: eedd14a b60558c
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Aug 15 12:56:45 2026 -0400
+
+    Merge remote-tracking branch 'refs/remotes/org-ai-assisted/master'
+
+commit b60558c021b889d007066138afd6e47752ab0d00
+Merge: eedd14a 2515adf
+Author: assisted-by-ai (Bot Account) (Machine Account) <228987186+assisted-by-ai@users.noreply.github.com>
+Date:   Sat Aug 1 05:00:38 2026 -0400
+
+    Merge pull request #39 from org-ai-assisted/ai
+
+    CI: add bandit, codeql-actions, secrets-audit scanner workflows
+
+commit eedd14aeeb8b0f3ca884f8465195df27505d8a82
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Sat Aug 1 08:46:34 2026 +0000
+
+    bumped changelog version
+
 commit 1b105a88c0f62549991239ee38fd6f1d02be87ba
 Merge: 333b32f 8c40b1d
 Author: Patrick Schleizer <adrelanos@whonix.org>
@@ -10,6 +32,30 @@ Author: Patrick Schleizer <adrelanos@whonix.org>
 Date:   Sat Aug 1 08:14:26 2026 +0000
 
     bumped changelog version
+
+commit 2515adf5133931e7b7587c4db6fa1cadcc6340d5
+Author: claude (dev142 b93fb2c6-e15f-4d45-8566-f3ded893b70e) <noreply@anthropic.com>
+Date:   Fri Jul 31 16:23:28 2026 -0400
+
+    CI: propagate bandit, codeql-actions, secrets-audit workflows
+
+    Byte-identical propagation from developer-meta-files
+    consumer-templates. Closes scanner-coverage gaps:
+
+    - consumer-bandit.yml: Python security lint, universal
+      self-discovery (extension + shebang scan), no per-repo config.
+    - consumer-codeql-actions.yml: CodeQL 'actions' language --
+      workflow-YAML security analysis (script-injection, missing
+      permissions, unpinned actions).
+    - consumer-secrets-audit.yml: manual-dispatch secrets surface
+      audit (presence flags only, values never emitted).
+
+    Managed files -- do not hand-edit; regenerated on the next
+    propagation pass.
+
+    ## AI-Assisted
+
+    Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
 
 commit 8c40b1d5969d2ef143f6dda2a61a0e8f7d9e3db8
 Merge: 5c4d3c2 6aaa531
