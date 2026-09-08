@@ -1,3 +1,47 @@
+commit f3dbf98179032104127bcc5ac1b3d8ff917de2df
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Sep 8 11:35:53 2026 -0400
+
+    add debian install file (generated using "genmkfile debinstfile")
+
+commit d9820769b4033b37e276c7c3dc3e775e083e5e1a
+Merge: 9bfe385 42556aa
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Tue Sep 8 10:23:23 2026 -0400
+
+    Merge remote-tracking branch 'refs/remotes/ArrayBolt3/arraybolt3/trixie'
+
+commit 42556aa1b60901ed5314b8784b64c9037a73e7c1
+Merge: eedd14a 8fa5c0e
+Author: Aaron Rainbolt <arraybolt3@gmail.com>
+Date:   Sat Sep 5 22:57:36 2026 -0400
+
+    Merge branch 'ai' into arraybolt3/trixie
+
+commit 8fa5c0ef227571c105061918575224b71788136b
+Author: assisted-by-ai (Bot Account) (Machine Account) <228987186+assisted-by-ai@users.noreply.github.com>
+Date:   Mon Aug 24 23:30:10 2026 -0400
+
+    ci: drop orphaned consumer-secrets-audit.yml (reusable decommissioned)
+
+commit 5c152099aff516a48ebca5ea8e5af6a09cee0274
+Author: assisted-by-ai (Bot Account) (Machine Account) <228987186+assisted-by-ai@users.noreply.github.com>
+Date:   Mon Aug 24 23:30:08 2026 -0400
+
+    ci: drop orphaned consumer-codex-review.yml (reusable decommissioned)
+
+commit b148a7feef85344652753c682960babec8caedb6
+Author: assisted-by-ai (Bot Account) (Machine Account) <228987186+assisted-by-ai@users.noreply.github.com>
+Date:   Mon Aug 24 23:30:05 2026 -0400
+
+    ci: drop orphaned consumer-claude-code.yml (reusable decommissioned)
+
+commit 9bfe38558f765a54fd6b9aa1bf984da98e2cde2a
+Author: Patrick Schleizer <adrelanos@whonix.org>
+Date:   Mon Aug 17 04:59:02 2026 +0000
+
+    bumped changelog version
+
 commit 950ab2edf7df69b0a01cf397abdb6d8a12ef4647
 Merge: eedd14a b60558c
 Author: Patrick Schleizer <adrelanos@whonix.org>
